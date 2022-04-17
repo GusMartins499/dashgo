@@ -13,12 +13,7 @@ export function Header() {
       px='6'
       align='center'
     >
-      <Text
-        fontSize='3xl'
-        fontWeight='bold'
-        letterSpacing='tight'
-        w='64'
-      >
+      <Text fontSize='3xl' fontWeight='bold' letterSpacing='tight' w='64'>
         dashgo
         <Text as='span' ml='1' color='pink.500'>.</Text>
       </Text>
@@ -41,16 +36,13 @@ export function Header() {
           variant='unstyled'
           px='4'
           mr='4'
-          placeholder='Search'
+          placeholder='Buscar na plataforma'
           _placeholder={{ color: 'gray.400' }}
         />
         <Icon as={RiSearchLine} fontSize='20' />
       </Flex>
 
-      <Flex
-        align='center'
-        ml='auto'
-      >
+      <Flex align='center' ml='auto'>
         <HStack
           mx='8'
           pr='8'
@@ -64,22 +56,14 @@ export function Header() {
           <Icon as={RiUserAddLine} fontSize='20' />
         </HStack>
 
-        <Flex
-          align='center'
-        >
-          <Box
-            mr='4'
-            textAlign='right'
-          >
+        <Flex align='center'>
+          <Box mr='4' textAlign='right'>
             <Text>Gustavo Martins</Text>
-            <Text
-              color='gray.300'
-              fontSize='small'
-            >
+            <Text color='gray.300' fontSize='small'>
               gustavosm994@gmail.com</Text>
           </Box>
 
-          <Avatar size='md' name='Gustavo Martins' src='https://github.com/gusmartins499.png'/>
+          <Avatar size='md' name='Gustavo Martins' src='https://github.com/gusmartins499.png' />
         </Flex>
       </Flex>
     </Flex>
