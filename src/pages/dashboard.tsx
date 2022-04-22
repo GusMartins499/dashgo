@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
 import dynamic from 'next/dynamic';
 import { Header } from "../components/Header";
@@ -57,7 +58,13 @@ const series = [
   { name: 'series1', data: [31, 120, 10, 28, 61, 18, 109] }
 ]
 
-export default function dashboard() {
+export default function Dashboard() {
+  const [chartState, setChartState] = useState(false);
+
+  useEffect(() => {
+    setChartState(true);
+  }, []);
+
   return (
     <Flex direction="column" h='100vh'>
       <Header />
@@ -68,12 +75,12 @@ export default function dashboard() {
 
           <Box p={['6', '8']} bg='gray.800' borderRadius={8} pb='4'>
             <Text fontSize='lg' mb='4'>Inscritos da semana</Text>
-            <Chart options={options} series={series} type='area' height={160} />
+            {chartState && <Chart options={options} series={series} type='area' height={160} />}
           </Box>
 
           <Box p={['6', '8']} bg='gray.800' borderRadius={8} pb='4'>
             <Text fontSize='lg' mb='4'>Taxa de abertura</Text>
-            <Chart options={options} series={series} type='area' height={160} />
+            {chartState && <Chart options={options} series={series} type='area' height={160} />}
           </Box>
 
         </SimpleGrid>
